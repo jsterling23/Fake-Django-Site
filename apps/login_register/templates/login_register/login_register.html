@@ -1,0 +1,119 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block title %} Get In Here! {% endblock %}
+
+{% block content %}
+
+<!-- {% load static %} -->
+
+<br>
+<div class="container-fluid">
+     <div class="jumbotron login_jumbo">
+          <div class="row">
+               <div class="col-lg-8">
+                    <h1 style="color:white">
+                         Welcome To The Klasshole!
+                    </h1>
+                    <h6 style="color:white">
+                         Let your inner Klasshole out...
+                    </h6>
+               </div>
+               <div class="col-lg-4">
+                    <!-- img on the jumbotron -->
+                    <img src="{% static 'login_register/images/klasshole.jpg' %}" class="img-fluid klassimg" alt="klasshole">
+               </div>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-lg-12">
+               {% if messages %}
+               <div class="container">
+                    <ul class="messages">
+                   {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                   {% endfor %}
+                   </ul>
+               </div>
+               {% endif %}
+          </div>
+     </div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+     <div class="row">
+          <div class="col-lg-5 register">
+               <h1><small>Register</small></h1>
+               <hr>
+               <form class="" action="{% url 'login_register:register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                         <label for="name" class="col-2 col-form-label">Name </label>
+                         <div class="col-10">
+                              <input type="text" class="form-control" name="name" value="">
+                         </div>
+                    </div>
+                    <div class="form-group row">
+                         <label for="alias" class="col-2 col-form-label">Alias </label>
+                         <div class="col-10">
+                              <input type="text" class="form-control" name="alias" value="">
+                         </div>
+                    </div>
+                    <div class="form-group row">
+                         <label for="email" class="col-2 col-form-label">Email </label>
+                         <div class="col-10">
+                              <input type="email" class="form-control" name="email" data-error="Bruh, that email address is invalid" value="">
+                         </div>
+                    </div>
+                    <div class="form-group row">
+                         <label for="password" class="col-2 col-form-label">Password </label>
+                         <div class="col-10">
+                              <input type="password" class="form-control" name="password" value="">
+                         </div>
+                    </div>
+                    <div class="form-group row">
+                         <label for="confirm_password" class="col-2 col-form-label">Confirm </label>
+                         <div class="col-10">
+                              <input type="password" class="form-control" name="confirm_password" value="">
+                         </div>
+                    </div>
+                    <p>*If Password isn't 8 characters long... This will blow up*</p>
+                    <div class="form-group row">
+                         <label for="dob" class="col-2 col-form-label">DOB </label>
+                         <div class="col-10">
+                              <input type="date" class="form-control" name="dob" value="">
+                         </div>
+                    </div>
+                    <input type="submit" name="" class="btn float-right" value="Register">
+               </form>
+          </div>
+
+          <div class="col-lg-5 login">
+               <h1><small>Login</small></h1>
+               <hr>
+               <form class="" action="{% url 'login_register:login' %}" method="post">
+                    {% csrf_token %}
+
+                    <div class="form-group row">
+                         <label for="email" class="col-2 col-form-label">Email </label>
+                         <div class="col-10">
+                              <input type="text" class="form-control" name="email" value="">
+                         </div>
+                    </div>
+                    <div class="form-group row">
+                         <label for="password" class="col-2 col-form-label">Password </label>
+                         <div class="col-10">
+                              <input type="password" class="form-control" name="password" value="">
+                         </div>
+                    </div>
+                    <input type="submit" name="" class="btn float-right" value="Login">
+               </form>
+          </div>
+     </div>
+</div>
+<br>
+
+{% endblock content %}

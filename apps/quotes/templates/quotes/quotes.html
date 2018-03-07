@@ -1,0 +1,25 @@
+{% extends "dashboard/dashboard.html" %}
+
+{% block title %} Get In Here! {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+     <div class="jumbotron">
+          <h1>Quotes by {{user.name}}</h1>
+     </div>
+     <div class="col-lg-12">
+
+          {% for quote in quotes %}
+               <div class="row">
+                    <div class="col-lg-6">
+                              <h4><span style='color:red'>{{quote.content_by}}:</span> <small>{{quote.content}}</small></h4>
+                    </div>
+               </div>
+               <br>
+          {% endfor %}
+
+     </div>
+</div>
+
+{% endblock %}

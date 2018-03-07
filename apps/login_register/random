@@ -1,0 +1,6 @@
+#
+# birth_day = request.POST['dob'][8:]
+# print birth_day
+#
+# birth_month = request.POST['dob'][5:7]
+# print birth_month
