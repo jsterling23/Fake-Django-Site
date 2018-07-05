@@ -8,6 +8,7 @@
 <br>
 <p>What you will need to run this is...</p>
 <ul>
+     <li>VirtualEnv</li>
      <li>Python 2.7.10</li>
      <li>Django</li>
      <li>Knowledge installing both</li>
