@@ -1,4 +1,4 @@
-<h1>KlassHoles</h1>
+<h1>Fake Site</h1>
 <hr>
 <p>This was an exam used for a coding school that I attended. It was to demonstrate my knowledge on basic Django project structure along with SQL data storage and manipulation.</p>
 
